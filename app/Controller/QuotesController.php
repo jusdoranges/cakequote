@@ -7,6 +7,16 @@ App::uses('AppController', 'Controller');
  */
 class QuotesController extends AppController {
 
+
+	if ($this->action == 'add') {
+		if (isset($user['group_id']) && $user['group_id']> 0){
+			return true;
+		}else{
+			return false;
+		}
+
+	}
+	
 /**
  * index method
  *

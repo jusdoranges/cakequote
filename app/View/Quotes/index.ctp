@@ -43,6 +43,11 @@
 	</div>
 </div>
 <div class="actions">
+	<h3><?php echo __('LogIn'); ?></h3>
+	<ul>
+	<li class="log"><?php echo $this->Html->link(__('Connect'), array('controller' => 'users', 'action' => 'login')); ?> </li>
+	<li class="log"><?php echo $this->Html->link(__('Disconnect'), array('controller' => 'users', 'action' => 'logout')); ?> </li>
+</ul>
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Quote'), array('action' => 'add')); ?></li>

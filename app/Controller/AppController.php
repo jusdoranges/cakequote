@@ -60,7 +60,9 @@ class AppController extends Controller {
 	
 	public function isAuthorized($user)
 	{
-		
+		if($this->action == 'login' || $this->action == 'logout'){
+		return true;
+	}
 		if (isset($user['group_id']) && $user['group_id']== 1 ){
 			return true;
 		}

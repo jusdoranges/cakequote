@@ -24,6 +24,7 @@ class UsersController extends AppController {
 	
 	public function isAuthorized($user)
 		{
+			
 			if($this->action == "delete")
 			{
 				return false;
@@ -51,7 +52,7 @@ class UsersController extends AppController {
 	}
 	
 	
-	
+
 	
 	/**
 	 * login and logout
@@ -71,9 +72,14 @@ class UsersController extends AppController {
 	 }
 	 
 	 
+	 // public function logout(){
+	 // 		 $this->redirect($this->Auth->logout());
+	 // }
+	 
 	 public function logout(){
-		 $this->redirect($this->Auth->logout());
-	 }
+	 $this->Session->setFlash('A BIENTOT COPAIN');
+	 $this->redirect($this->Auth->logout());
+	 } 
 
 	 
 

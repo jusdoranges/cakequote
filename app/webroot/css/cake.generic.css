@@ -107,6 +107,12 @@ p {
 	padding: 10px 20px 40px 20px;
 	overflow: auto;
 }
+.title_quotes{font-size: 20px;color:#0062BD;font-weight: bold;}
+.quotes{width:100%;float:left;}
+.quotes_users{float:left;font-size: 75%;}
+.quotes_background{background-color:rgb(163, 200, 255);margin-bottom: 20px;}
+.button_inscription{background-color:#019ad2;}
+
 #footer {
 	clear: both;
 	padding: 6px 10px;
@@ -162,7 +168,7 @@ table tr td {
 	padding: 6px;
 	text-align: left;
 	vertical-align: top;
-	border-bottom:1px solid #ddd;
+
 }
 table tr:nth-child(even) {
 	background: #f9f9f9;
@@ -288,7 +294,6 @@ fieldset fieldset div {
 form div {
 	clear: both;
 	margin-bottom: 1em;
-	padding: .5em;
 	vertical-align: text-top;
 }
 form .input {

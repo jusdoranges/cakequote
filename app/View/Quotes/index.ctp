@@ -14,7 +14,11 @@
 	<?php foreach ($quotes as $quote): ?>
 	<tr class="quotes_background">
 
-		<td class="quotes title_quotes"><?php echo h($quote['Quote']['title']); ?>&nbsp;</td>
+		<td class="quotes title_quotes">
+			<?php  echo $this->Html->link(h($quote['Quote']['title'])
+			, array('action' => 'view', $quote['Quote']['id']));  ?>
+			
+			&nbsp;</td>
 		<td class="quotes"><?php echo h($quote['Quote']['body']); ?>&nbsp;</td>
 		
 		<td class="quotes_users">#<?php echo h($quote['Quote']['id']); ?>&nbsp;</td>
@@ -26,15 +30,14 @@
 		<!-- <td><?php echo h($quote['Quote']['updated']); ?>&nbsp;</td> -->
 		
 		<td class="actions">
-			
-			<?php  echo $this->Html->link(__('View'), array('action' => 'view', $quote['Quote']['id']));  ?>
-
-			<?php if ($me['id']==$quote['User']['id'] || $me['group_id']==1 || $me['group_id']==2): ?>
-				
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $quote['Quote']['id']));  ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $quote['Quote']['id']), null, __('Are you sure you want to delete # %s?', $quote['Quote']['id']));?>
-			
-			<?php endif; ?>
+<?php
+	if($me['id']>0){
+		if ($me['id']==$quote['User']['id'] || $me['group_id']==1 || $me['group_id']==2){
+			echo $this->Html->link(__('Edit'), array('action' => 'edit', $quote['Quote']['id']));
+			echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $quote['Quote']['id']), null, __('Are you sure you want to delete # %s?', $quote['Quote']['id']));
+		}
+	}
+?>
 		
 		</td>
 	</tr>

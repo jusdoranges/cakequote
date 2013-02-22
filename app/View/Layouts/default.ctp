@@ -38,11 +38,11 @@
 	<div id="container">
 		<div id="header">
 			<h1><?php echo $this->Html->link('cakequote', '/'); ?></h1>
-			
+			<h3> Bienvenue <?php echo $me['username']; ?> !</h3>
 		</div>
 		<div id="content">
-			<?php debug($me); ?>
-
+			
+			
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>

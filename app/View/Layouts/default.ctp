@@ -38,6 +38,7 @@
 	<div id="container">
 		<div id="header">
 			<h1><?php echo $this->Html->link('cakequote', '/'); ?></h1>
+			
 		</div>
 		<div id="content">
 			<?php debug($me); ?>
@@ -47,9 +48,9 @@
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer">
-			coded with love
+			un site cool / vive les lamas
 		</div>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
+	<!-- <?php echo $this->element('sql_dump'); ?> -->
 </body>
 </html>

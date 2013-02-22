@@ -24,13 +24,23 @@
 		<td class="quotes_users">Le <?php echo h($quote['Quote']['created']); ?>&nbsp;</td>
 		
 		<!-- <td><?php echo h($quote['Quote']['updated']); ?>&nbsp;</td> -->
+		
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $quote['Quote']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $quote['Quote']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $quote['Quote']['id']), null, __('Are you sure you want to delete # %s?', $quote['Quote']['id'])); ?>
+			
+			<?php  echo $this->Html->link(__('View'), array('action' => 'view', $quote['Quote']['id']));  ?>
+
+			<?php if ($me['id']==$quote['User']['id'] || $me['group_id']==1 || $me['group_id']==2): ?>
+				
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $quote['Quote']['id']));  ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $quote['Quote']['id']), null, __('Are you sure you want to delete # %s?', $quote['Quote']['id']));?>
+			
+			<?php endif; ?>
+		
 		</td>
 	</tr>
+	
 <?php endforeach; ?>
+
 	</table>
 	<p>
 	<?php
